@@ -6,6 +6,13 @@ pipeline{
         jdk 'Java17'
         maven 'Maven3'
     }
+    environment{
+	    APP_NAME = "complete-production-pipeline"
+	    RELEASE = "1.0.0"
+	    DOCKER_USER = "newguyinli"
+	    DOCKER_PASS = "dockerhub"
+	    IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+    }
     stages{
         stage('Clean Workspace'){
             steps{
