@@ -12,6 +12,7 @@ pipeline{
 	    DOCKER_USER = "newguyinli"
 	    DOCKER_PASS = "dockerhub"
 	    IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+	    IMAGE_TAG = "${RELEASE}-{NUILD_NUMBER}"
     }
     stages{
         stage('Clean Workspace'){
