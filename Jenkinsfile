@@ -15,7 +15,7 @@ pipeline{
     
         stage("Checkout from SCM"){
             steps{
-                git branch: 'main', credentials: 'github', url: 'https://github.com/subzero11/complete-production-pipeline'
+                git branch: 'main', credentials: 'github', url: 'https://github.com/subzero11/complete-production-pipeline/tree/main'
             }
         }
     }
