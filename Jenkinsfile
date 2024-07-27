@@ -8,14 +8,26 @@ pipeline{
     }
     stages{
         stage("Cleanup WorkSpace"){
-            steps {
+            steps{
                 cleanWs()
             }
         }
-    
+
         stage("Checkout from SCM"){
-            steps {
+            steps{
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/subzero11/complete-production-pipeline'
+            }
+        }
+    
+        stage("Build Application"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Test Application"){
+            steps{
+                sh "mvn test"
             }
         }
     }
