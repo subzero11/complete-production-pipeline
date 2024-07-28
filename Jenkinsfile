@@ -62,7 +62,7 @@ pipeline{
                 docker.withRegistry("", DOCKER_PASS){
                     docker_image = docker.build "${IMAGE_NAME}"
                 }
-                docker.withRegistry("jenkins", DOCKER_PASS){
+                docker.withRegistry("agent", DOCKER_PASS){
                     docker_image.push("${IMAGE_TAG}")
                 }
                 }
