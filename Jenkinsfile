@@ -28,7 +28,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/subzero11/complete-production-pipeline'
             }
         }
-    
+
         stage("Build Application") {
             steps {
                 sh "mvn clean package"
@@ -84,6 +84,4 @@ pipeline {
     }
 }
 
-
-    }
 }
