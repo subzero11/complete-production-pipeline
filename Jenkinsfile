@@ -9,8 +9,8 @@ pipeline {
     environment {
         APP_NAME = "complete-production-e2e-pipeline"
         RELEASE = "1.0.0"
-        DOCKER_USER = "newguyinli"
-        DOCKER_PASS = 'dockerhub'
+        DOCKER_USER = ${{secrets.DOCKER_USER}}
+        DOCKER_PASS = $${{secrets.DOCKER_PASS}}
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
         JENKINS_API_TOKEN = credentials('JENKINS_API_TOKEN')
